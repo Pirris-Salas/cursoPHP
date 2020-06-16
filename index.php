@@ -85,9 +85,8 @@ $jobs = [
         <div>
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
-            <?php
-            $idx = 0;
-          do {
+            <?php  
+          for ($idx = 0; $idx < count($jobs); $idx ++){ //La funcion count sirve para contar la cantidad de indices existentes en el vector job
                echo '<li class="work-position">';
                echo '<h5>' . $jobs[$idx]['title'] . '</h5>';
                echo '<p>' . $jobs[$idx]['description'] . '</p>';
@@ -98,9 +97,7 @@ $jobs = [
                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
                echo '</ul>';
                echo '</li>';
-               $idx = $idx + 1;
-          
-          }while ($idx < 3);
+          }
             ?>
           </ul>
         </div>
