@@ -26,6 +26,13 @@ $jobs = [
 ]
 ];
 
+//if($var1 > 2){
+//echo 'es mayor que 2';
+//}else {
+//echo 'No es mayor que 2';
+//}
+
+
 //$jobs[0]['title'];
 
 //var_dump($jobs); -- Con var_dumps podemos visualizar los valores en el navegador, en este caso  un vector y sus respectivas posiciones
@@ -78,36 +85,23 @@ $jobs = [
         <div>
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
-            <li class="work-position">
-              <h5><?php echo $jobs[0]['title']; ?></h5>
-              <p><?php echo $jobs[0]['description']; ?></p>
-              <strong>Achievements:</strong>
-              <ul>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-              </ul>
-            </li>
-            <li class="work-position">
-                <h5><?php echo $jobs[1]['title']; ?></h5>
-                <p><?php echo $jobs[1]['description']; ?></p>
-                <strong>Achievements:</strong>
-                <ul>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                </ul>
-              </li>
-              <li class="work-position">
-                  <h5><?php echo $jobs[2]['title']; ?></h5>
-                  <p><?php echo $jobs[2]['description']; ?></p>
-                  <strong>Achievements:</strong>
-                  <ul>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-                  </ul>
-                </li>
+            <?php
+            $idx = 0;
+          do {
+               echo '<li class="work-position">';
+               echo '<h5>' . $jobs[$idx]['title'] . '</h5>';
+               echo '<p>' . $jobs[$idx]['description'] . '</p>';
+               echo '<strong>Achievements:</strong>';
+               echo '<ul>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
+               echo '</ul>';
+               echo '</li>';
+               $idx = $idx + 1;
+          
+          }while ($idx < 3);
+            ?>
           </ul>
         </div>
         <div>
