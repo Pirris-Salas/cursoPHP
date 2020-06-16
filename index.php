@@ -4,11 +4,21 @@ $var1 = 1;
 $apellido = 'Salgado';
 $nombre = "Luis Salas $apellido";
 $jobs = [
-  
-'title' => 'PHP Developer', 
-1 => 'Python Dev',
-2 => 'Devops'  
+[
+  'title' => 'PHP Developer', 
+  'description' => 'This is an interesting career, and with many growing oportunities.'
+],
+[
+  'title' => 'Python Dev',
+  'description' => 'A programming language I learned by accident, but it became an excellent tool for new challenges.'
+],
+[
+  'title' => 'Devops',  
+  'description' => 'Considered as a career achieve and not a job. This is something I still learning using my self-taught skills.'
+]
 ];
+
+//$jobs[0]['title'];
 
 //var_dump($jobs); -- Con var_dumps podemos visualizar los valores en el navegador, en este caso  un vector y sus respectivas posiciones
 ?>
@@ -61,8 +71,8 @@ $jobs = [
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <li class="work-position">
-              <h5><?php echo $jobs['title']; ?></h5>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
+              <h5><?php echo $jobs[0]['title']; ?></h5>
+              <p><?php echo $jobs[0]['description']; ?></p>
               <strong>Achievements:</strong>
               <ul>
                 <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
@@ -71,8 +81,8 @@ $jobs = [
               </ul>
             </li>
             <li class="work-position">
-                <h5><?php echo $jobs[1]; ?></h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
+                <h5><?php echo $jobs[1]['title']; ?></h5>
+                <p><?php echo $jobs[1]['description']; ?></p>
                 <strong>Achievements:</strong>
                 <ul>
                   <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
@@ -81,8 +91,8 @@ $jobs = [
                 </ul>
               </li>
               <li class="work-position">
-                  <h5><?php echo $jobs[2]; ?></h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
+                  <h5><?php echo $jobs[2]['title']; ?></h5>
+                  <p><?php echo $jobs[2]['description']; ?></p>
                   <strong>Achievements:</strong>
                   <ul>
                     <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
