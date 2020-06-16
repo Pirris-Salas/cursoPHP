@@ -3,6 +3,14 @@
 $var1 = 1;
 $apellido = 'Salgado';
 $nombre = "Luis Salas $apellido";
+
+//$jobs = [
+  //'title' => 'PHP Developer', 
+ // 1 => 'Python Dev',
+  //2 => 'Devops'  
+ // ];
+// ARRAY REGULAR
+
 $jobs = [
 [
   'title' => 'PHP Developer', 
