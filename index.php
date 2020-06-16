@@ -1,3 +1,18 @@
+<?php 
+
+$var1 = 1;
+$apellido = 'Salgado';
+$nombre = "Luis Salas $apellido";
+$jobs = [
+  
+'title' => 'PHP Developer', 
+1 => 'Python Dev',
+2 => 'Devops'  
+];
+
+//var_dump($jobs); -- Con var_dumps podemos visualizar los valores en el navegador, en este caso  un vector y sus respectivas posiciones
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -21,10 +36,10 @@
         <img id="profile-picture" src="https://ui-avatars.com/api/?name=John+Doe&size=255" alt="">
       </div>
       <div class="col">
-        <h1>Hector Benitez</h1>
+        <h1><?php echo $nombre; ?></h1>
         <h2>PHP Developer</h2>
         <ul>
-          <li>Mail: hector@mail.com</li>
+          <li>Mail: luissalas_10@outlook.com</li>
           <li>Phone: 1234567890</li>
           <li>LinkedIn: https://linkedin.com</li>
           <li>Twitter: @hectorbenitez</li>
@@ -46,7 +61,7 @@
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <li class="work-position">
-              <h5>PHP Developer</h5>
+              <h5><?php echo $jobs['title']; ?></h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
               <strong>Achievements:</strong>
               <ul>
@@ -56,7 +71,7 @@
               </ul>
             </li>
             <li class="work-position">
-                <h5>PHP Developer</h5>
+                <h5><?php echo $jobs[1]; ?></h5>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
                 <strong>Achievements:</strong>
                 <ul>
@@ -66,7 +81,7 @@
                 </ul>
               </li>
               <li class="work-position">
-                  <h5>PHP Developer</h5>
+                  <h5><?php echo $jobs[2]; ?></h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sapiente sed pariatur sint exercitationem eos expedita eveniet veniam ullam, quia neque facilis dicta voluptatibus. Eveniet doloremque ipsum itaque obcaecati nihil.</p>
                   <strong>Achievements:</strong>
                   <ul>
