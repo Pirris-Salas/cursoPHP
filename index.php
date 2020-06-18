@@ -3,6 +3,7 @@
 $var1 = 1;
 $apellido = 'Salgado';
 $nombre = "Luis Salas $apellido";
+$limitMonths = 12;
 
 //$jobs = [
   //'title' => 'PHP Developer', 
@@ -14,15 +15,33 @@ $nombre = "Luis Salas $apellido";
 $jobs = [
 [
   'title' => 'PHP Developer', 
-  'description' => 'This is an interesting career, and with many growing oportunities.'
+  'description' => 'This is an interesting career, and with many growing oportunities.',
+  'visible' => 'true',
+  'months' => 7
 ],
 [
   'title' => 'Python Dev',
-  'description' => 'A programming language I learned by accident, but it became an excellent tool for new challenges.'
+  'description' => 'A programming language I learned by accident, but it became an excellent tool for new challenges.',
+  'visible' => 'true',
+  'months' => 9
 ],
 [
   'title' => 'Devops',  
-  'description' => 'Considered as a career achieve and not a job. This is something I still learning using my self-taught skills.'
+  'description' => 'Considered as a career achieve and not a job. This is something I still learning using my self-taught skills.',
+  'visible' => 'true',
+  'months' => 12
+],
+[
+  'title' => 'Travel Agent',  
+  'description' => 'Nice experience, here is where I improved my english language skills',
+  'visible' => 'true',
+  'months' => 66
+],
+[
+  'title' => 'Linux Servers',  
+  'description' => 'I love Linux, but it hates me.',
+  'visible' => 'true',
+  'months' => 2
 ]
 ];
 
@@ -86,10 +105,24 @@ $jobs = [
           <h3 class="border-bottom-gray" >Work Experience</h3>
           <ul>
             <?php  
+
+            $totalMonths = 0;
           for ($idx = 0; $idx < count($jobs); $idx ++){ //La funcion count sirve para contar la cantidad de indices existentes en el vector job
-               echo '<li class="work-position">';
+            
+            // $totalMonths = $totalMonths + $jobs[$idx]['months']; El =+ resume el código, tal cual el ejemplo de abajo.
+            $totalMonths += $jobs[$idx]['months'];
+
+            if($totalMonths > $limitMonths){
+
+            break;
+            };
+
+            if($jobs[$idx]['visible'] == 'true'){
+            
+            echo '<li class="work-position">';
                echo '<h5>' . $jobs[$idx]['title'] . '</h5>';
                echo '<p>' . $jobs[$idx]['description'] . '</p>';
+               echo '<p>' . $totalMonths . '</p>';
                echo '<strong>Achievements:</strong>';
                echo '<ul>';
                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
@@ -97,6 +130,7 @@ $jobs = [
                echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
                echo '</ul>';
                echo '</li>';
+            }
           }
             ?>
           </ul>
