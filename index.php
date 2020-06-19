@@ -81,7 +81,7 @@ require_once('jobs.php');
           for ($idx = 0; $idx < count($jobs); $idx ++){ //La funcion count sirve para contar la cantidad de indices existentes en el vector job
             
             // $totalMonths = $totalMonths + $jobs[$idx]['months']; El =+ resume el código, tal cual el ejemplo de abajo.
-            $totalMonths += $jobs[$idx]['months'];
+            $totalMonths += $jobs[$idx]->months;
 
             if($totalMonths > $limitMonths){
             break;
