@@ -4,37 +4,74 @@ class Job {
 
     private $title;
     public $description;
-    public $visible;
+    public $visible = true;
     public $months;
+
+    public function __construct($title , $description){
+
+      $this->setTitle($title);
+      $this->description = $description;
+    }
 
     public function setTitle ($title){
 
+      if ($title == ''){
+$this->title = 'N/A';
+
+      }else{
         $this->title = $title;
+
+      }
+
+        
     }
+
 
     public function getTitle(){
 
         return $this->title;
     }
 
+    public function jobDurationAsString(){
+  
+  
+      $years = floor ($this->months / 12);
+      $residuoYears = $this->months % 12; // Residuo de la división de meses / 12
+    
+    if($this->months <= 11){
+    
+      return "Duration: $this->months month(s)";
+    
+    }elseif ($residuoYears == 0) {
+    
+      return "Duration: $years year(s).";
+    
+    }else{
+    
+      return "Duration: $years year(s) and $residuoYears month(s)";
+    }
+    
+    
+    }
+
+
+
 }
 
-$job1 = new Job();
-$job1->setTitle('PHP Developer');
-$job1->description = 'This is an interesting career, and with many growing oportunities.';
-$job1->visible = 'true';
+$job1 = new Job('PHP Developer', 'This is an interesting career, and with many growing oportunities.');
 $job1->months = 7;
 
-$job2 = new Job();
-$job2->setTitle('Python Dev');
-$job2->description = 'A programming language I learned by accident, but it became an excellent tool for new challenges.';
-$job2->visible = 'true';
+$job2 = new Job('Python Dev', 'A programming language I learned by accident, but it became an excellent tool for new challenges.');
 $job2->months = 23;
+
+$job3 = new Job('Devops', 'Considered as a career achieve and not a job. This is something I still learning using my self-taught skills.');
+$job3->months = 12;
 
 $jobs = [
 
 $job1,
-$job2
+$job2,
+$job3
     /* [
       'title' => 'PHP Developer', 
       'description' => 'This is an interesting career, and with many growing oportunities.',
@@ -71,7 +108,7 @@ $job2
 
 function printJob ($job){
 
-    if($job->visible == 'false'){
+    if($job->visible == false){
               
       return;
        }
@@ -79,7 +116,7 @@ function printJob ($job){
     echo '<li class="work-position">';
     echo '<h5>' . $job->getTitle() . '</h5>';
     echo '<p>' . $job->description . '</p>';
-    echo '<p>' . jobDuration($job->months) . '</p>';
+    echo '<p>' . $job->jobDurationAsString() . '</p>';
     echo '<strong>Achievements:</strong>';
     echo '<ul>';
     echo '<li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>';
@@ -90,24 +127,3 @@ function printJob ($job){
   
   }
   
-  function jobDuration($months){
-  
-  
-    $years = floor ($months / 12);
-    $residuoYears = $months % 12; // Residuo de la división de meses / 12
-  
-  if($months <= 11){
-  
-    return "Duration: $months month(s)";
-  
-  }elseif ($residuoYears == 0) {
-  
-    return "Duration: $years year(s).";
-  
-  }else{
-  
-    return "Duration: $years year(s) and $residuoYears month(s)";
-  }
-  
-  
-  }
